@@ -205,3 +205,41 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# --- NeuroSync-Manipulation Specific ---
+
+# MuJoCo Assets
+# 시뮬레이션 모델 파일은 관리하되, 임시 생성된 파일이나 캐시 방지
+assets/*.temp
+assets/*.bak
+
+# Dataset (가장 중요)
+# 로보틱스 데이터셋은 수십 GB에 달하므로 절대 업로드 금지
+data/
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.tfrecord
+
+# Model Checkpoints & Weights
+# 학습된 모델 가중치는 외부 저장소(WandB, S3 등)를 사용하거나 수동 관리
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.weights
+
+# Logs & Visualization
+# 실험 로그 및 렌더링된 비디오/이미지
+outputs/
+multirun/
+wandb/
+results/
+*.mp4
+*.png
+*.gif
+
+# System & Hydra
+# 하이드라 설정 관리자가 생성하는 임시 파일
+.hydra/
